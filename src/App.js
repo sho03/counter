@@ -1,6 +1,7 @@
 import Counter from './components/Counter';
 import { createStore } from 'redux';
 import React from 'react';
+import { Provider } from 'react-redux';
 
 const initialState = {
   count: 0
@@ -34,9 +35,9 @@ store.dispatch({type: "RESET"})
 
 const App = () => {
   return (
-    <div>
+    <Provider store={store}>
       <Counter/>
-    </div>
+    </Provider>
   );
 }
 
